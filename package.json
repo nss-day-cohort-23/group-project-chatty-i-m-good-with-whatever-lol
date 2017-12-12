@@ -1,7 +1,11 @@
 {
   "name": "group-project-chatty-i-m-good-with-whatever-lol",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "## Setup",
+=======
+  "description": "Every teammate copy and run the following commands in the host machine terminal.",
+>>>>>>> master
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^1.0.1",
