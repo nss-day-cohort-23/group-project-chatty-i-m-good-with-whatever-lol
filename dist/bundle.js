@@ -8,15 +8,42 @@ let messages = require('./messages');
 document.addEventListener('keypress', function(e){
   if(e.keyCode === 13){
     let message = document.getElementById('input').value;
-    console.log(message);    
     messages.createMsg(message);
 
   }
 });
+
+document.querySelector('body').addEventListener('click', function(){
+  if(event.target.className === 'delete'){
+    event.target.parentNode.remove();
+  }
+
+});
+
+document.getElementById('destroy').addEventListener('click', function(){
+  document.getElementById('messageArea').childNode.remove();
+  this.setAttribute('disabled', true);
+  // console.log(this, 'this');
+});
+
+  
+// querySelectorAll('.delete');
+// console.log(deleteBtns);
+// for (let i = 0; i<deleteBtns.length; i++){
+//   let dBtn = deleteBtns[i];
+  
+//   dBtn.addEventListener('click', function(){
+    
+//     console.log(dBtn);
+    
+//   //   console.log(event.target);
+//   //   // event.target.removeChild();
+
+//   });
+// }
 },{"./messages":3}],2:[function(require,module,exports){
 'use strict';
 
-// let messages = require('./messages');
 let interactions = require('./interactions');
 
 
@@ -29,15 +56,13 @@ const messageReq = new XMLHttpRequest();
 
 
 let data;
+
 let parseData = () => {
    data = JSON.parse(event.target.responseText).messages;
    writeToDom();   
-
 };
 
 messageReq.addEventListener('load', parseData);
-
-
 
 messageReq.open("GET","data.json");
 
@@ -51,8 +76,10 @@ function createMsg(message){
   let id = (Date.now()).toString().slice(-4);
   let msg = {'id': id, 'message':message} ;
   data.push(msg);
+  document.getElementById('destroy').setAttribute('disabled', false);
   writeToDom();
 }
+
 
 function writeToDom(){
 let msgDiv = '';
