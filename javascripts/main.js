@@ -1,6 +1,6 @@
 'use strict';
-let messages = require('./messages');
 
+let interactions = require('./interactions');
 
 
 // module.exports = {parseData};
