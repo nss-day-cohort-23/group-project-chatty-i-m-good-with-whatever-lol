@@ -1,46 +1,46 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-// console.log('interactions');
 
 let messages = require('./messages');
+let targeted;
 
-document.addEventListener('keypress', function(e){
-  if(e.keyCode === 13){
-    let message = document.getElementById('input').value;
-    messages.createMsg(message);
-
+document.addEventListener('keypress', function (e) {
+  let message = document.getElementById('input').value;
+  if (e.keyCode === 13) {
+    if (document.querySelector('.selected') !== null) {
+      targeted.childNodes[1].innerHTML = document.getElementById('input').value;
+      targeted.classList.remove("selected");
+    } else {
+      messages.createMsg(message);
+    }
+    document.getElementById('input').value = '';
   }
 });
+
 
 document.querySelector('body').addEventListener('click', function(){
   if(event.target.className === 'delete'){
+    let deleteId = event.target.parentNode.id;
     event.target.parentNode.remove();
-  }
+    messages.deleteMessage(deleteId);
+  } else if(event.target.className === 'edit'){
+    event.target.parentNode.classList.toggle('selected');
+     targeted = event.target.parentNode;
 
+    }
 });
 
 document.getElementById('destroy').addEventListener('click', function(){
-  document.getElementById('messageArea').childNode.remove();
+  document.getElementById('messageArea').innerHTML = '';
   this.setAttribute('disabled', true);
-  // console.log(this, 'this');
+  messages.deleteAll();  
 });
 
-  
-// querySelectorAll('.delete');
-// console.log(deleteBtns);
-// for (let i = 0; i<deleteBtns.length; i++){
-//   let dBtn = deleteBtns[i];
-  
-//   dBtn.addEventListener('click', function(){
-    
-//     console.log(dBtn);
-    
-//   //   console.log(event.target);
-//   //   // event.target.removeChild();
 
-//   });
-// }
+
+  
+
 },{"./messages":3}],2:[function(require,module,exports){
 'use strict';
 
@@ -68,33 +68,38 @@ messageReq.open("GET","data.json");
 
 messageReq.send();
 
-// function buildMsgObj(){
-//   data.push(msg)
-  
-// }
+
 function createMsg(message){
   let id = (Date.now()).toString().slice(-4);
   let msg = {'id': id, 'message':message} ;
   data.push(msg);
-  document.getElementById('destroy').setAttribute('disabled', false);
   writeToDom();
 }
 
 
 function writeToDom(){
 let msgDiv = '';
-  data.forEach((msgs) => {
-     msgDiv += `<div class='msgDiv' id=${msgs.id}>
-    <p class='msgp'> ${msgs.message}</p>
+  data.forEach((msg) => {
+     msgDiv += `<div class='msgDiv' id=${msg.id}>
+    <p class='msgp'> ${msg.message}</p>
+    <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>
     </div>`;
 
   });
   document.getElementById('messageArea').innerHTML = msgDiv;
-  
+  document.getElementById('destroy').removeAttribute('disabled');
+}
+function deleteMessage(deleteId){
+data = data.filter(function(item){
+  return item.id !== deleteId;
+  });
 }
 
+function deleteAll(){
+data = [];
+}
 
-module.exports ={createMsg};
+module.exports ={createMsg, deleteMessage, deleteAll};
 
 },{}]},{},[2]);
