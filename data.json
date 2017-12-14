@@ -3,26 +3,31 @@
     {
       "date": "1900-8-7 4:23:23",
       "id": "1",
-      "message": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+      "message": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+      "user": "Luke Skywalker"
     },
     { 
       "date": "2444-10-12 1:11:1",
       "id": "2",
-      "message": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
+      "message": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+      "user": "Leia Organa"
     },
     { "date": "2005-6-3 12:32:22",
       "id": "3",
-      "message": "dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia"
+      "message": "dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia",
+      "user": "Han Solo"
     },
     {
       "date": "500-1-7 3:44:22",
       "id": "4",
-      "message": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit "
+      "message": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit",
+      "user": "Chewbacca"
     }, 
     {
       "date": "4815-16-23 4:24:8",
       "id": "5",
-      "message": " Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam"
+      "message": " Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam",
+      "user": "Yoda"
     }
   ]
 }
