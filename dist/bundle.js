@@ -64,26 +64,21 @@ messageReq.send();
 // }
 function createMsg(message){
   let id = (Date.now()).toString().slice(-4);
-
   let msg = { 'date': '', 'id': id, 'message':message} ;
+  
   let date = new Date().toISOString().slice(0,19).split('T');
   let fDate = date[0] + ' ' + date[1];
   msg.date = fDate;
+
   data.push(msg);
   
-  // console.log(fDate);
-  // document.getElementById('destroy').setAttribute('disabled', false);
   writeToDom();
 }
 
 
 function writeToDom(){
 let msgDiv = '';
-// let date = Date.now();
-// let date = new Date().toISOString().slice(0,19).split('T');
-//   let fDate = date[0] + ' ' + date[1];
-//   console.log(fDate);
-    // finDate = fDate[1] + ' ' + fDate
+
   data.forEach((msg) => {
   
      msgDiv += `<div class='msgDiv' id=${msg.id}>
