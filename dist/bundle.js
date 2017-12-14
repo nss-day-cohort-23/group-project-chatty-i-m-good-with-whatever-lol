@@ -51,6 +51,7 @@ let interactions = require('./interactions');
 },{"./interactions":1}],3:[function(require,module,exports){
 'use strict';
 
+let users = require ('./users');
 
 const messageReq = new XMLHttpRequest();
 
@@ -70,8 +71,9 @@ messageReq.send();
 
 
 function createMsg(message){
+  let user = users.setUser();
   let id = (Date.now()).toString().slice(-4);
-  let msg = {'id': id, 'message':message} ;
+  let msg = {'id': id, 'message':message, 'user': user} ;
   data.push(msg);
   writeToDom();
 }
@@ -81,7 +83,8 @@ function writeToDom(){
 let msgDiv = '';
   data.forEach((msg) => {
      msgDiv += `<div class='msgDiv' id=${msg.id}>
-    <p class='msgp'> ${msg.message}</p>
+
+    <p class='msgp'> <b>${msg.user}</b>: ${msg.message}</p>
     <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>
     </div>`;
@@ -101,5 +104,36 @@ data = [];
 }
 
 module.exports ={createMsg, deleteMessage, deleteAll};
+
+},{"./users":4}],4:[function(require,module,exports){
+'use strict';
+
+let users = {
+  names: ['Luke Skywalker', 'Leia Organa', 'Han Solo', 'Chewbacca', 'Yoda']
+};
+
+module.exports.setUser = () => {
+  let user;
+  let current_user = document.querySelector('input[name="current_user"]:checked').value;
+ switch(current_user){
+  case '1':
+    user = users.names[0];
+    break;
+  case '2':
+    user = users.names[1];
+    break;
+    case '3':
+      user = users.names[2];
+      break;
+    case '4':
+      user = users.names[3];
+      break;
+    case '5':
+      user = users.names[4];
+      break;
+  }
+  return user;
+
+};
 
 },{}]},{},[2]);

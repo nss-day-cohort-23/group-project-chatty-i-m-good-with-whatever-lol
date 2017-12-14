@@ -2,23 +2,28 @@
   "messages": [
     {
       "id": "1",
-      "message": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+      "message": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+      "user": "Luke Skywalker"
     },
     {
       "id": "2",
-      "message": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
+      "message": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+      "user": "Leia Organa"
     },
     {
       "id": "3",
-      "message": "dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia"
+      "message": "dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia",
+      "user": "Han Solo"
     },
     {
       "id": "4",
-      "message": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit "
+      "message": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit",
+      "user": "Chewbacca"
     }, 
     {
       "id": "5",
-      "message": " Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam"
+      "message": " Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam",
+      "user": "Yoda"
     }
   ]
 }
