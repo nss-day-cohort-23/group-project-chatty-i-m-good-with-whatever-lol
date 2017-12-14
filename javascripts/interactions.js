@@ -38,4 +38,11 @@ document.getElementById('destroy').addEventListener('click', function(){
 
 
 
+
+let bodyDiv = document.getElementById('body');
+
+document.getElementById('dark').addEventListener('click', function(){
+
+  bodyDiv.classList.toggle('darkside');
   
+})

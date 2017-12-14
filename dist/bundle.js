@@ -38,8 +38,29 @@ document.getElementById('destroy').addEventListener('click', function(){
 });
 
 
+// function changeTheme(){
+// let themes =  document.getElementsByName('theme');
+//   themes.forEach (function(theme){
+//     theme.addEventListener('change', function(){
+//       console.log('this works');
+//       // let body = document.getElementsByTagName('body');
+//       // body.classList.toggle('darkside');
 
-  
+//     });
+//   });
+//
+
+// function changeTheme(){
+let themes = document.querySelectorAll('input[name="themes"]');
+
+console.log(themes);
+themes.forEach(function (theme) {
+  theme.addEventListener('click', function () {
+    let bodyDiv = document.getElementById('body');
+    bodyDiv.classList.toggle('darkside');
+
+  });
+});
 
 },{"./messages":3}],2:[function(require,module,exports){
 'use strict';
