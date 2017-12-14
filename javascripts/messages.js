@@ -40,8 +40,17 @@ let msgDiv = '';
 
   });
   document.getElementById('messageArea').innerHTML = msgDiv;
-  
+
+    document.getElementById('destroy').removeAttribute('disabled');
+}
+function deleteMessage(deleteId){
+data = data.filter(function(item){
+  return item.id !== deleteId;
+  });
 }
 
+function deleteAll(){
+data = [];
+}
 
-module.exports ={createMsg};
+module.exports ={createMsg, deleteMessage, deleteAll};
