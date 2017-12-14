@@ -20,7 +20,13 @@
 
 input {
   display: inline-block;
-  margin: auto auto -5% auto;
+  // margin: auto auto -5% auto;
+  // color: white;
+  
+}
+
+.navbar {
+  color: white;
 }
 
 .delete {
@@ -72,7 +78,7 @@ input {
 #logo {
   height: auto;
   width: auto;
-  margin-right: -5em;
+  // margin-right: 5em;
 }
 
 
