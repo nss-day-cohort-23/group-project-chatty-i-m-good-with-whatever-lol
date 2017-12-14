@@ -44,5 +44,5 @@ let bodyDiv = document.getElementById('body');
 document.getElementById('dark').addEventListener('click', function(){
 
   bodyDiv.classList.toggle('darkside');
-  
-})
+  document.getElementById('logo').src = 'images/trooper.png';
+});
