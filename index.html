@@ -8,11 +8,18 @@
   <link rel="stylesheet" href="stylesheets/main.css">
   <title>Chatty</title>
 </head>
-<body class="backgroundBlack">
+<body id='body'>
+  <div id='bodyDiv' class="backgroundBlack">
 <div class="container">
     <div class="col-lg"> </div>
     <div class="col">
       <nav class="navbar sticky-top navbar-light bg">
+
+          <input type="radio" name='themes' id='dark' value='dark'>
+          <label for="dark">Once you start down the dark path, forever will it dominate your destiny </label>
+          <!-- <input type="radio" name='themes' id='light' value='light'>
+          <label for="light">To answer power with power, the Jedi way this is not</label> -->
+
           <img id="logo" src="images/trooper.png" alt="Storm Trooper">
         <input id="input" type="text">
         <input type="radio" name='current_user' id='luke'value='1'>
@@ -35,5 +42,6 @@
      </div>
 </div>
 <script src="dist/bundle.js"></script>
+</div>
 </body>
 </html>
