@@ -73,18 +73,28 @@ messageReq.send();
 function createMsg(message){
   let user = users.setUser();
   let id = (Date.now()).toString().slice(-4);
-  let msg = {'id': id, 'message':message, 'user': user} ;
+  let msg = { 'date': '', 'id': id, 'message':message, 'user': user} ;
+  
+  let date = new Date().toISOString().slice(0,19).split('T');
+  let fDate = date[0] + ' ' + date[1];
+  msg.date = fDate;
+
   data.push(msg);
+  
   writeToDom();
 }
 
 
 function writeToDom(){
 let msgDiv = '';
+
   data.forEach((msg) => {
+  
      msgDiv += `<div class='msgDiv' id=${msg.id}>
 
     <p class='msgp'> <b>${msg.user}</b>: ${msg.message}</p>
+    <p class='time'> ${msg.date} </p>
+
     <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>
     </div>`;
