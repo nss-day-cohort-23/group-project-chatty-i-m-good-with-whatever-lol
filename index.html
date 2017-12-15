@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/main.css">
   <title>Chatty</title>
 </head>
+
 <body id='body'>
   <div id='bodyDiv' class="backgroundBlack">
-<div class="container">
-    <div class="col-lg"> </div>
-    <div class="col">
-      <nav class="navbar sticky-top navbar-light bg">
-        
-        <img id="logo" src="images/rebel.png" alt="Rebel">
-          <p id='darkLabel'>Let your hate consume you! </p> <br>
-          <!-- <input type="radio" name='themes' id='light' value='light'>
-          <label for="light">To answer power with power, the Jedi way this is not</label> -->
-        <input id="input" type="text">
-        <div id='characters'>
-          <input type="radio" name='current_user' id='luke'value='1'>
-          <label for="luke">Luke</label>
-          <input type="radio" name='current_user' id='leia' value='2'>
-          <label for="leia">Leia</label>
-          <input type="radio" name='current_user' id='han' value='3'>
-          <label for="han">Han</label>
-          <input type="radio" name='current_user' id='chewbacca' value='4'>
-          <label for="chewbacca">Chewbacca</label>
-          <input type="radio" name='current_user' id='yoda' value='5'>
-          <label for="yoda">Yoda</label> 
+    <div class="container">
+      <div class="col-lg"> </div>
+      <div class="col">
+        <nav class="navbar sticky-top navbar-light bg">
+
+          <img id="logo" src="images/rebel.png" alt="Rebel">
+          <p id='darkLabel'>Let your hate consume you! </p>
+          <br>
+         
+          <input id="input" type="text">
+          <div id='characters'>
+            <input type="radio" name='current_user' id='luke' value='1'>
+            <label for="luke">Luke</label>
+            <input type="radio" name='current_user' id='leia' value='2'>
+            <label for="leia">Leia</label>
+            <input type="radio" name='current_user' id='han' value='3'>
+            <label for="han">Han</label>
+            <input type="radio" name='current_user' id='chewbacca' value='4'>
+            <label for="chewbacca">Chewbacca</label>
+            <input type="radio" name='current_user' id='yoda' value='5'>
+            <label for="yoda">Yoda</label>
+          </div>
+          <span></span>
+          <button type='button' id='jabbafy' class='nav-button'> Jabbafy</button>
+          <button type='button' id='destroy' class='nav-button'> Delete All</button>
+        </nav>
+
+        <div class="image borderRed">
+          <div id="messageArea"></div>
+          <div class="col-lg"> </div>
+          <footer class="footer">
+          </footer>
         </div>
-        <span></span>
-        <button type='button' id='jabbafy' class='nav-button'> Jabbafy</button>
-        <button type='button' id='destroy' class='nav-button'> Delete All</button>
-        </div>
-      </nav>
-     <div class="image borderRed">  
-        <div id="messageArea"></div>
-        <div class="col-lg"> </div>
-        <!-- <footer class="footer">
-          <button type='button' id='destroy'> Delete All</button>
-        </footer> -->
-     </div>
-</div>
-<script src="dist/bundle.js"></script>
-</div>
+      </div>
+    </div>
+
+    <script src="dist/bundle.js"></script>
 </body>
+
 </html>

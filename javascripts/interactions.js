@@ -8,7 +8,6 @@ document.addEventListener('keypress', function (e) {
   let message = document.getElementById('input').value;
   if (e.keyCode === 13) {
     if (document.querySelector('.selected') !== null) {
-      console.log(targeted);
       targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
 

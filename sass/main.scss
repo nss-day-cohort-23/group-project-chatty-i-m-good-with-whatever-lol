@@ -19,16 +19,16 @@
 }
 
 input {
-  display: inline-block;
   flex-grow: 5;
-  // margin: auto auto -5% auto;
-  // color: white;
+
   
 }
 
 .navbar {
+  
   color: white;
   display: flex;
+  
   
 }
 
@@ -52,7 +52,6 @@ input {
     opacity: 1;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    // background-image: 
     width: 100%;
     padding: 10px 0;
   }
@@ -80,13 +79,11 @@ input {
   .bg {
     background-color: #6C9189;
     border-bottom: solid white 3px;
-    // border-radius:;
   }
 
   #logo {
     height: auto;
     width: auto;
-    // margin-right: 5em;
   }
 
 
@@ -109,7 +106,6 @@ input {
   background-attachment: fixed;
   height: auto;
   width: auto;
-  // <img id="logo" src="images/trooper.png" alt="Storm Trooper">
 }
 
 // Dark side 
@@ -155,13 +151,11 @@ input {
   .bg {
     background-color: black;
     border-bottom: solid white 3px;
-    // border-radius:;
   }
 
   #logo {
     height: auto;
     width: auto;
-    // margin-right: 5em;
   }
 
 
@@ -213,8 +207,7 @@ input {
 .large{
   font-size: 30px;
 }
-      
-      
+    
       
 #characters{
   width: 100%;
@@ -239,4 +232,9 @@ input {
 .msgDiv{
   padding-top: 2%;
   padding-left: 3%;
+}
+
+.navbar{
+  position: sticky !important;
+  
 }
