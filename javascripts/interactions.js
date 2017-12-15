@@ -58,3 +58,8 @@ document.getElementById('logo').addEventListener('click', function(){
     
   }
 });
+
+document.getElementById('jabbafy').addEventListener('click', function(){
+  document.getElementById('messageArea').classList.toggle('large');
+  
+});
