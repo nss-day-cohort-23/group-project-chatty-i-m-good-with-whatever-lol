@@ -14,13 +14,12 @@
     <div class="col-lg"> </div>
     <div class="col">
       <nav class="navbar sticky-top navbar-light bg">
-
-          <input type="radio" name='themes' id='dark' value='dark'>
-          <label for="dark">Once you start down the dark path, forever will it dominate your destiny </label>
+        
+        <img id="logo" src="images/rebel.png" alt="Rebel">
+          <p id='darkLabel'>Let your hate consume you! </p> <br>
           <!-- <input type="radio" name='themes' id='light' value='light'>
           <label for="light">To answer power with power, the Jedi way this is not</label> -->
 
-          <img id="logo" src="images/trooper.png" alt="Storm Trooper">
         <input id="input" type="text">
         <input type="radio" name='current_user' id='luke'value='1'>
         <label for="luke">Luke</label>
@@ -31,14 +30,16 @@
         <input type="radio" name='current_user' id='chewbacca' value='4'>
         <label for="chewbacca">Chewbacca</label>
         <input type="radio" name='current_user' id='yoda' value='5'>
-        <label for="yoda">Yoda</label>
+        <label for="yoda">Yoda</label> 
+        <span></span>
+        <button type='button' id='destroy'> Delete All</button>
       </nav>
      <div class="image borderRed">  
         <div id="messageArea"></div>
         <div class="col-lg"> </div>
-        <footer class="footer">
+        <!-- <footer class="footer">
           <button type='button' id='destroy'> Delete All</button>
-        </footer>
+        </footer> -->
      </div>
 </div>
 <script src="dist/bundle.js"></script>

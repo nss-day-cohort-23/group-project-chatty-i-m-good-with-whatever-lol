@@ -13,7 +13,11 @@ document.addEventListener('keypress', function (e) {
       targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
     } else {
+     if((document.querySelector('input[name="current_user"]:checked') == null)){
+      window.alert('Who are you?');
+     }else{
       messages.createMsg(message);
+     }
     }
     document.getElementById('input').value = '';
   }
@@ -43,10 +47,17 @@ document.getElementById('destroy').addEventListener('click', function(){
 
 let bodyDiv = document.getElementById('body');
 
-document.getElementById('dark').addEventListener('click', function(){
-
+document.getElementById('logo').addEventListener('click', function(){
   bodyDiv.classList.toggle('darkside');
+  if (document.querySelector('.darkside') !== null) {
+  document.getElementById('logo').src = 'images/trooper.png';
+  document.getElementById('darkLabel').innerHTML = "Do or do not. There is no try";
   
+  }else{
+    document.getElementById('logo').src = 'images/rebel.png';
+    document.getElementById('darkLabel').innerHTML = "Let your hate consume you!";
+    
+  }
 });
 
 },{"./messages":3}],2:[function(require,module,exports){

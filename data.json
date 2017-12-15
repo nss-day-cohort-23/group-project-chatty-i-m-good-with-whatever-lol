@@ -3,30 +3,30 @@
     {
       "date": "1900-8-7 4:23:23",
       "id": "1",
-      "message": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+      "message": "Yoda, with my third wish, I wish for your freedom!",
       "user": "Luke Skywalker"
     },
     { 
       "date": "2444-10-12 1:11:1",
       "id": "2",
-      "message": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+      "message": "You're a Jedi, Luke Skywalker!",
       "user": "Leia Organa"
     },
     { "date": "2005-6-3 12:32:22",
       "id": "3",
-      "message": "dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia",
+      "message": "VAD-ERRRRRRRRRRRRRRRRRRRRR!",
       "user": "Han Solo"
     },
     {
       "date": "500-1-7 3:44:22",
       "id": "4",
-      "message": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit",
+      "message": "Hey everyone, how is it going? It's me, Chewbacca, but you can call me Chewy. I cant wait to work with all of you.",
       "user": "Chewbacca"
     }, 
     {
       "date": "4815-16-23 4:24:8",
       "id": "5",
-      "message": " Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam",
+      "message": "Oh boy... I'm just so tired of all of these Star Wars.",
       "user": "Yoda"
     }
   ]
