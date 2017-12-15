@@ -8,7 +8,8 @@ document.addEventListener('keypress', function (e) {
   let message = document.getElementById('input').value;
   if (e.keyCode === 13) {
     if (document.querySelector('.selected') !== null) {
-      targeted.childNodes[1].innerHTML = document.getElementById('input').value;
+      console.log(targeted);
+      targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
     } else {
       messages.createMsg(message);
@@ -45,4 +46,4 @@ document.getElementById('dark').addEventListener('click', function(){
 
   bodyDiv.classList.toggle('darkside');
   
-})
+});

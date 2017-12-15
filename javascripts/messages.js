@@ -40,7 +40,8 @@ let msgDiv = '';
   data.forEach((msg) => {
   
      msgDiv += `<div class='msgDiv' id=${msg.id}>
-    <p class='msgp'> <b>${msg.user}</b>: ${msg.message}</p>
+     <b class='user'>${msg.user}</b>
+    <p class='msgp'> : ${msg.message}</p>
     <p class='time'> ${msg.date} </p>
     <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>

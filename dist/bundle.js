@@ -9,7 +9,8 @@ document.addEventListener('keypress', function (e) {
   let message = document.getElementById('input').value;
   if (e.keyCode === 13) {
     if (document.querySelector('.selected') !== null) {
-      targeted.childNodes[1].innerHTML = document.getElementById('input').value;
+      console.log(targeted);
+      targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
     } else {
       messages.createMsg(message);
@@ -38,28 +39,14 @@ document.getElementById('destroy').addEventListener('click', function(){
 });
 
 
-// function changeTheme(){
-// let themes =  document.getElementsByName('theme');
-//   themes.forEach (function(theme){
-//     theme.addEventListener('change', function(){
-//       console.log('this works');
-//       // let body = document.getElementsByTagName('body');
-//       // body.classList.toggle('darkside');
 
-//     });
-//   });
-//
 
-// function changeTheme(){
-let themes = document.querySelectorAll('input[name="themes"]');
+let bodyDiv = document.getElementById('body');
 
-console.log(themes);
-themes.forEach(function (theme) {
-  theme.addEventListener('click', function () {
-    let bodyDiv = document.getElementById('body');
-    bodyDiv.classList.toggle('darkside');
+document.getElementById('dark').addEventListener('click', function(){
 
-  });
+  bodyDiv.classList.toggle('darkside');
+  
 });
 
 },{"./messages":3}],2:[function(require,module,exports){
@@ -112,7 +99,8 @@ let msgDiv = '';
   data.forEach((msg) => {
   
      msgDiv += `<div class='msgDiv' id=${msg.id}>
-    <p class='msgp'> <b>${msg.user}</b>: ${msg.message}</p>
+     <b class='user'>${msg.user}</b>
+    <p class='msgp'> : ${msg.message}</p>
     <p class='time'> ${msg.date} </p>
     <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>
