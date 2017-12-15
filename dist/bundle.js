@@ -12,14 +12,19 @@ document.addEventListener('keypress', function (e) {
       console.log(targeted);
       targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
+
     } else {
      if((document.querySelector('input[name="current_user"]:checked') == null)){
       window.alert('Who are you?');
      }else{
       messages.createMsg(message);
+      document.querySelector('input[name="current_user"]:checked').checked = false;
+      
      }
     }
     document.getElementById('input').value = '';
+    
+    
   }
 });
 
