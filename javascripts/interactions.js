@@ -11,11 +11,13 @@ document.addEventListener('keypress', function (e) {
       console.log(targeted);
       targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
+
     } else {
      if((document.querySelector('input[name="current_user"]:checked') == null)){
       window.alert('Who are you?');
      }else{
       messages.createMsg(message);
+      document.querySelector('input[name="current_user"]:checked').checked = false;
      }
     }
     document.getElementById('input').value = '';
@@ -56,5 +58,13 @@ document.getElementById('logo').addEventListener('click', function(){
     document.getElementById('logo').src = 'images/rebel.png';
     document.getElementById('darkLabel').innerHTML = "Let your hate consume you!";
     
+  }
+});
+
+document.getElementById('jabbafy').addEventListener('click', function(){
+  document.getElementById('messageArea').classList.toggle('large');
+  if(document.querySelector('.large') !== null) {
+  window.alert('Spasteelya du oonta Boonta');
+  
   }
 });

@@ -12,11 +12,13 @@ document.addEventListener('keypress', function (e) {
       console.log(targeted);
       targeted.childNodes[3].innerHTML = document.getElementById('input').value;
       targeted.classList.remove("selected");
+
     } else {
      if((document.querySelector('input[name="current_user"]:checked') == null)){
       window.alert('Who are you?');
      }else{
       messages.createMsg(message);
+      document.querySelector('input[name="current_user"]:checked').checked = false;
      }
     }
     document.getElementById('input').value = '';
@@ -60,6 +62,13 @@ document.getElementById('logo').addEventListener('click', function(){
   }
 });
 
+document.getElementById('jabbafy').addEventListener('click', function(){
+  document.getElementById('messageArea').classList.toggle('large');
+  if(document.querySelector('.large') !== null) {
+  window.alert('Spasteelya du oonta Boonta');
+  
+  }
+});
 },{"./messages":3}],2:[function(require,module,exports){
 'use strict';
 
@@ -112,7 +121,7 @@ let msgDiv = '';
      msgDiv += `<div class='msgDiv' id=${msg.id}>
      <b class='user'>${msg.user}</b>
     <p class='msgp'> : ${msg.message}</p>
-    <p class='time'> ${msg.date} </p>
+    <p class='time'> posted: ${msg.date} </p>
     <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>
     </div>`;
