@@ -42,7 +42,7 @@ let msgDiv = '';
      msgDiv += `<div class='msgDiv' id=${msg.id}>
      <b class='user'>${msg.user}</b>
     <p class='msgp'> : ${msg.message}</p>
-    <p class='time'> ${msg.date} </p>
+    <p class='time'> posted: ${msg.date} </p>
     <button type='button' class='edit'> Edit</button>    
     <button type='button' class='delete'> Delete</button>
     </div>`;
