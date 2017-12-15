@@ -19,12 +19,9 @@ document.addEventListener('keypress', function (e) {
      }else{
       messages.createMsg(message);
       document.querySelector('input[name="current_user"]:checked').checked = false;
-      
      }
     }
     document.getElementById('input').value = '';
-    
-    
   }
 });
 
@@ -67,7 +64,10 @@ document.getElementById('logo').addEventListener('click', function(){
 
 document.getElementById('jabbafy').addEventListener('click', function(){
   document.getElementById('messageArea').classList.toggle('large');
+  if(document.querySelector('.large') !== null) {
+  window.alert('Spasteelya du oonta Boonta');
   
+  }
 });
 },{"./messages":3}],2:[function(require,module,exports){
 'use strict';
