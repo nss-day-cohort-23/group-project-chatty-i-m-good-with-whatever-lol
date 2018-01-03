@@ -2,22 +2,20 @@
 
 let users = require ('./users');
 
-const messageReq = new XMLHttpRequest();
+// const messageReq = new XMLHttpRequest();
 
 
 let data;
 
-let parseData = () => {
-   data = JSON.parse(event.target.responseText).messages;
+function parseData (msgs) {
+    data = msgs.messages;
    writeToDom();   
-};
+}
 
-messageReq.addEventListener('load', parseData);
+$.ajax({
+url: "data.json"
 
-messageReq.open("GET","data.json");
-
-messageReq.send();
-
+}).done(parseData);
 
 function createMsg(message){
   let user = users.setUser();
@@ -33,12 +31,10 @@ function createMsg(message){
   writeToDom();
 }
 
-
 function writeToDom(){
 let msgDiv = '';
 
   data.forEach((msg) => {
-  
      msgDiv += `<div class='msgDiv' id=${msg.id}>
      <b class='user'>${msg.user}</b>
     <p class='msgp'> : ${msg.message}</p>
@@ -48,8 +44,8 @@ let msgDiv = '';
     </div>`;
 
   });
-  document.getElementById('messageArea').innerHTML = msgDiv;
-  document.getElementById('destroy').removeAttribute('disabled');
+  $('#messageArea').html(msgDiv);
+  $('#destroy').removeAttr('disabled');
 }
 function deleteMessage(deleteId){
 data = data.filter(function(item){

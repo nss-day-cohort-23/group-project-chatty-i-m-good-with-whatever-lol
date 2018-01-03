@@ -2,68 +2,57 @@
 
 
 let messages = require('./messages');
-let targeted;
 
-document.addEventListener('keypress', function (e) {
-  let message = document.getElementById('input').value;
+$(document).keypress(function (e) {
   if (e.keyCode === 13) {
-    if (document.querySelector('.selected') !== null) {
-      targeted.childNodes[3].innerHTML = document.getElementById('input').value;
-      targeted.classList.remove("selected");
-
+    let message = $('#input').val();
+    if ($('.msgDiv').hasClass('selected')) {
+      $("div.selected").find('.msgp').html(message);
+      $("div.selected").removeClass("selected");
     } else {
-     if((document.querySelector('input[name="current_user"]:checked') == null)){
-      window.alert('Who are you?');
-     }else{
-      messages.createMsg(message);
-      document.querySelector('input[name="current_user"]:checked').checked = false;
-     }
+      let cUser = $('input[name="current_user"]:checked');
+      if (cUser.length == 0) {
+        window.alert('Who are you?');
+      } else {
+        messages.createMsg(message);
+        $(cUser).prop('checked', false);
+      }
     }
-    document.getElementById('input').value = '';
+    $('#input').val('');
   }
 });
 
-
-document.querySelector('body').addEventListener('click', function(){
-  if(event.target.className === 'delete'){
-    let deleteId = event.target.parentNode.id;
-    event.target.parentNode.remove();
+$(document).ready(function () {
+  $('.delete').on('click', function () {
+    let deleteId = $(this).parent().id;
+    $(this).parent().remove();
     messages.deleteMessage(deleteId);
-  } else if(event.target.className === 'edit'){
-    event.target.parentNode.classList.toggle('selected');
-     targeted = event.target.parentNode;
-
-    }
+  });
+  $('.edit').on('click', function () {
+    $(this).parent().toggleClass('selected');
+  });
 });
 
-document.getElementById('destroy').addEventListener('click', function(){
-  document.getElementById('messageArea').innerHTML = '';
-  this.setAttribute('disabled', true);
-  messages.deleteAll();  
+$('#destroy').click(function () {
+  $('#messageArea').html('');
+  $(this).attr("disabled", true);
+  messages.deleteAll();
 });
 
 
 
+let $bodyDiv = $('#body');
 
-let bodyDiv = document.getElementById('body');
-
-document.getElementById('logo').addEventListener('click', function(){
-  bodyDiv.classList.toggle('darkside');
-  if (document.querySelector('.darkside') !== null) {
-  document.getElementById('logo').src = 'images/trooper.png';
-  document.getElementById('darkLabel').innerHTML = "Do or do not. There is no try";
-  
-  }else{
-    document.getElementById('logo').src = 'images/rebel.png';
-    document.getElementById('darkLabel').innerHTML = "Let your hate consume you!";
-    
-  }
+$('#logo').on('click', function () {
+  $bodyDiv.toggleClass('darkside');
+  $($bodyDiv.hasClass('darkside')? 
+  $('#logo').attr('src', 'images/trooper.png') : 
+  $('#logo').attr('src', 'images/rebel.png'));
 });
 
-document.getElementById('jabbafy').addEventListener('click', function(){
-  document.getElementById('messageArea').classList.toggle('large');
-  if(document.querySelector('.large') !== null) {
-  window.alert('Spasteelya du oonta Boonta');
-  
-  }
+$('#jabbafy').click(function () {
+ $('#messageArea').toggleClass('large');
+  if ($('#messageArea').hasClass('large')) 
+    window.alert('Spasteelya du oonta Boonta');
+
 });

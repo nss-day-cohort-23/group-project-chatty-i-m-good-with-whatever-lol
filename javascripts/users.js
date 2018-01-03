@@ -6,7 +6,7 @@ let users = {
 
 module.exports.setUser = () => {
   let user;
-  let current_user = document.querySelector('input[name="current_user"]:checked').value;
+  let current_user = $('input[name="current_user"]:checked').val();
  switch(current_user){
   case '1':
     user = users.names[0];
